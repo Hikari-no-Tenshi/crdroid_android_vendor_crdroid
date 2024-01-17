@@ -595,3 +595,20 @@ inputdispatcher_skip_event_key {
         },
     },
 }
+
+soong_config_module_type {
+    name: "product_manufacturer",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    value_variables: ["product_manufacturer"],
+    properties: ["cppflags"],
+}
+
+product_manufacturer {
+    name: "product_manufacturer_defaults",
+    soong_config_variables: {
+        product_manufacturer: {
+            cppflags: ["-DPRODUCT_MANUFACTURER=\"%s\""],
+        },
+    },
+}
